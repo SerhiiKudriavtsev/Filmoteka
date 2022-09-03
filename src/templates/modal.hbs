@@ -1,0 +1,78 @@
+
+<div class="modal" data-modal="1">
+    <div class="modal__content">
+      <!-- // Сюди шаблон modal.hbs-->
+      <div class="modal-thumb" data-action="{{id}}">
+  <div>
+    <button data-modal-close class="js-modal-close button-modal--close">
+        <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+
+          <path id="Vector 1" d="M8 8L22 22" stroke="black" stroke-width="2"/>
+          <path id="Vector 2" d="M8 22L22 8" stroke="black" stroke-width="2"/>
+
+      </svg>
+       {{!-- <svg class="close__svg" width="15" height="15">
+        <use href="../images/symbol-defs.svg#close"></use>
+      </svg> --}}
+  </div>
+<div class="thumb">
+
+  <img class='modal__image' src="https://image.tmdb.org/t/p/w500{{poster_path}}" height="398" alt="{{title}}" data-id="{{id}}" loading="lazy" />
+</div>
+<div class="content__text">
+  <h2 class='modal__title'>{{title}}</h2>
+
+  <div class='wrap-modal'>
+    <ul class='modal__list modal__list--keys'>
+      <li class="modal__list__keys--item">Vote / Votes</li>
+      <li>Popularity</li>
+      <li class="modal__list__keys--item">Original Title</li>
+      <li>Genre</li>
+      <li class="modal__list__keys--item">TRAILER</li>
+
+    </ul>
+    <ul class='modal__list modal__list--values'>
+      <li class='modal-list__item'>
+        <span class='modal__rating--orange'>{{vote_average}}</span>
+        <span class='modal__rating--slash'> /</span>
+        <span class='modal__rating'>{{vote_count}}</span>
+      </li>
+      <li>{{popularity}}</li>
+      <li>
+          <p>{{original_title}}</p>
+      </li>
+      <li>
+      {{#each genres}}
+            <li class='modal__genres-item'>{{this.name}}</li>
+          {{/each}}
+      </li>
+      <li>
+        <button type='button' class='button-trailer' id="btn-trailer">
+          <svg class="video-svg" width="32" height="28">
+            <path d="M30.662 5.003c-4.488-0.645-9.448-1.003-14.662-1.003s-10.174 0.358-14.662 1.003c-0.86 3.366-1.338 7.086-1.338 10.997s0.477 7.63 1.338 10.997c4.489 0.645 9.448 1.003 14.662 1.003s10.174-0.358 14.662-1.003c0.86-3.366 1.338-7.086 1.338-10.997s-0.477-7.63-1.338-10.997zM12 22v-12l10 6-10 6z"></path>
+          </svg>
+        </button>
+      </li>
+    </ul>
+   </div>
+
+  <div class='modal-text'>
+    <h3 class='modal-text__title'>About</h3>
+    <p class='modal-text__item'>{{overview}}</p>
+  </div>
+
+
+
+
+  <ul class='list-buttons'>
+    <li>
+      <button type='submit' class='button-modal button-modal--orange' id='watchedInModal'>add to Watched</button>
+    </li>
+    <li>
+      <button type='submit' class='button-modal' id='queueInModal'>add to queue</button>
+    </li>
+  </ul>
+  </div>
+</div>
+</div>
+</div>
